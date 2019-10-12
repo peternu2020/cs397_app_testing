@@ -28,7 +28,7 @@
     "food-type":"None",
     "dietary-restrictions":"None",
     "event-type":"Social",
-    "cost":"Students $2 \nFaculty & Staff $4",
+    "cost":"None",
     "organization":"Gender & Sexuality Studies Program",
     "membership":0,
     "location":"Kresge Hall, GSS Seminar Room (1-525), 1880 Campus Drive, Evanston, IL 60208",
@@ -55,21 +55,55 @@
   },
 
   "4": {
-    "id":"3",
-    "name":"WNUR BBQ",
-    "date":"10-14-2019",
+    "id":"4",
+    "name":"Krishna Lunch",
+    "date":"11-4-2019",
     "day-of-week":"Monday",
-    "time-start":"17:30",
-    "time-end":"20:00",
-    "food-type":"BBQ",
+    "time-start":"10:50",
+    "time-end":"11:00",
+    "food-type":"Indian",
+    "dietary-restrictions":"Vegetarian",
+    "event-type":"Lunch",
+    "cost":"$6",
+    "organization":"ISKON Chicago",
+    "membership":0,
+    "location":"Cook Hall",
+    "description":"Cheap vegetarian indian food every day of the week"
+  },
+
+  "5": {
+    "id":"5",
+    "name":"DevSci Grad Student Welcome Back Event",
+    "date":"10-22-2019",
+    "day-of-week":"Tuesday",
+    "time-start":"15:00",
+    "time-end":"17:00",
+    "food-type":"Snacks",
     "dietary-restrictions":"None",
     "event-type":"Social",
-    "cost":"Free",
-    "organization":"WNUR",
+    "cost":"None",
+    "organization":"Institute for Innovations in Developmental Sciences (DevSci)",
     "membership":0,
-    "location":"Lakefill Fire Pit",
-    "description":"Come hang out, meet people on WNUR, and have some bbq!
-                  All are welcome (not just people involved with WNUR).
-                  Invite your friends! There will be music and lots of good company :)"
+    "location":"Norris University Center, Lake Room, 1999 Campus Drive, Evanston, IL 60208",
+    "description":"This welcome event is open to potential, new and returning cluster members. It’s a great way to meet the directors and learn more about cluster opportunities, including future events, poster sessions, seed funds, fellowship, and the new Transdisciplinary Developmental Sciences Certificate.
+                   Cluster students are encouraged to bring a friend to learn more about the Center for Trandisciplinary Training and DevSci Cluster.
+                   Snacks will be provided! "
+  },
+
+  "6": {
+    "id":"6",
+    "name":"Homecoming Social",
+    "date":"10-22-2019",
+    "day-of-week":"Tuesday",
+    "time-start":"18:00",
+    "time-end":"20:00",
+    "food-type":"None",
+    "dietary-restrictions":"None",
+    "event-type":"Social",
+    "cost":"None",
+    "organization":"Northwestern Homecoming",
+    "membership":0,
+    "location":"John Evans Center, 1800 Sheridan Road, Evanston, IL 60208",
+    "description":"Celebrate student athletes and all things purple pride at this free event at the JEC! Food and free giveaways will be available. Sponsored by the Arch Society."
   }
 }
