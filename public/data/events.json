@@ -19,38 +19,57 @@
   },
 
   "2": {
-    "id":"1",
-    "name":"Cheap Lunch",
+    "id":"2",
+    "name":"Gender & Sexuality Studies Undergraduate Lunch",
     "date":"10-16-2019",
     "day-of-week":"Wednesday",
-    "time-start":"12:00",
-    "time-end":"13:00",
-    "food-type":"BBQ",
+    "time-start":"12:30",
+    "time-end":"14:00",
+    "food-type":"None",
     "dietary-restrictions":"None",
     "event-type":"Social",
     "cost":"Students $2 \nFaculty & Staff $4",
+    "organization":"Gender & Sexuality Studies Program",
     "membership":0,
-    "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
-    "description":"Wednesdays @ noon
-                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
-                  Meet new friends. All are welcome!!"
+    "location":"Kresge Hall, GSS Seminar Room (1-525), 1880 Campus Drive, Evanston, IL 60208",
+    "description":"Join us for our first installment of quarterly lunches for students. Meet current GSS students, staff, and faculty."
   },
 
   "3": {
     "id":"3",
-    "name":"Cheap Lunch",
-    "date":"10-16-2019",
-    "day-of-week":"Wednesday",
-    "time-start":"12:00",
-    "time-end":"13:00",
+    "name":"WNUR BBQ",
+    "date":"10-14-2019",
+    "day-of-week":"Monday",
+    "time-start":"17:30",
+    "time-end":"20:00",
     "food-type":"BBQ",
     "dietary-restrictions":"None",
     "event-type":"Social",
-    "cost":"Students $2 \nFaculty & Staff $4",
+    "cost":"Free",
+    "organization":"WNUR",
     "membership":0,
-    "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
-    "description":"Wednesdays @ noon
-                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
-                  Meet new friends. All are welcome!!"
+    "location":"Lakefill Fire Pit",
+    "description":"Come hang out, meet people on WNUR, and have some bbq!
+                  All are welcome (not just people involved with WNUR).
+                  Invite your friends! There will be music and lots of good company :)"
+  },
+
+  "4": {
+    "id":"3",
+    "name":"WNUR BBQ",
+    "date":"10-14-2019",
+    "day-of-week":"Monday",
+    "time-start":"17:30",
+    "time-end":"20:00",
+    "food-type":"BBQ",
+    "dietary-restrictions":"None",
+    "event-type":"Social",
+    "cost":"Free",
+    "organization":"WNUR",
+    "membership":0,
+    "location":"Lakefill Fire Pit",
+    "description":"Come hang out, meet people on WNUR, and have some bbq!
+                  All are welcome (not just people involved with WNUR).
+                  Invite your friends! There will be music and lots of good company :)"
   }
 }
