@@ -1,0 +1,56 @@
+{
+  "1": {
+    "id":"1",
+    "name":"Cheap Lunch",
+    "date":"10-16-2019",
+    "day-of-week":"Wednesday",
+    "time-start":"12:00",
+    "time-end":"13:00",
+    "food-type":"BBQ",
+    "dietary-restrictions":"None",
+    "event-type":"Social",
+    "cost":"Students $2 \nFaculty & Staff $4",
+    "organization":"Sheil Catholic Center at Northwestern University",
+    "membership":0,
+    "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
+    "description":"Wednesdays @ noon
+                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
+                  Meet new friends. All are welcome!!"
+  },
+
+  "2": {
+    "id":"1",
+    "name":"Cheap Lunch",
+    "date":"10-16-2019",
+    "day-of-week":"Wednesday",
+    "time-start":"12:00",
+    "time-end":"13:00",
+    "food-type":"BBQ",
+    "dietary-restrictions":"None",
+    "event-type":"Social",
+    "cost":"Students $2 \nFaculty & Staff $4",
+    "membership":0,
+    "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
+    "description":"Wednesdays @ noon
+                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
+                  Meet new friends. All are welcome!!"
+  },
+
+  "3": {
+    "id":"3",
+    "name":"Cheap Lunch",
+    "date":"10-16-2019",
+    "day-of-week":"Wednesday",
+    "time-start":"12:00",
+    "time-end":"13:00",
+    "food-type":"BBQ",
+    "dietary-restrictions":"None",
+    "event-type":"Social",
+    "cost":"Students $2 \nFaculty & Staff $4",
+    "membership":0,
+    "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
+    "description":"Wednesdays @ noon
+                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
+                  Meet new friends. All are welcome!!"
+  }
+}
