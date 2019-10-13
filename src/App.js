@@ -5,7 +5,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Product from './Components/Card';
 import Cart from './Components/Cart';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
+var firebaseConfig = {
+  apiKey: "AIzaSyBWH38HPQ857TYu82B8wzufC8sK4yMOTco",
+  authDomain: "hungrycats-ad46c.firebaseapp.com",
+  databaseURL: "https://hungrycats-ad46c.firebaseio.com",
+  projectId: "hungrycats-ad46c",
+  storageBucket: "hungrycats-ad46c.appspot.com",
+  messagingSenderId: "684059161523",
+  appId: "1:684059161523:web:225ae9c7b51eaf653b51c6"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 const App = () => {
   const [data, setData] = useState({});
   const [cartActive, setCart] = useState(false);
@@ -13,6 +26,16 @@ const App = () => {
   const [inventory, setInventory] = useState({});
 
   useEffect(() => {
+    const ref = firebase.database().ref('/')
+    console.log(ref)
+    ref.on('value', (snapshot) =>
+    {
+      if (snapshot.val())
+        console.log(snapshot.val());
+      else
+        console.log("no data.")
+
+    });
     const fetchInventory = async () => {
       const response = await fetch('./data/items.json');
       const json = await response.json();

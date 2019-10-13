@@ -1,6 +1,6 @@
-{
-  "1": {
-    "id":"1",
+[
+  {
+    "id":"0",
     "name":"Cheap Lunch",
     "date":"10-16-2019",
     "day-of-week":"Wednesday",
@@ -13,13 +13,11 @@
     "organization":"Sheil Catholic Center at Northwestern University",
     "membership":0,
     "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
-    "description":"Wednesdays @ noon
-                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
-                  Meet new friends. All are welcome!!"
+    "description":"Wednesdays @ noon\nJoin us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!\nMeet new friends. All are welcome!!"
   },
 
-  "2": {
-    "id":"2",
+  {
+    "id":"1",
     "name":"Gender & Sexuality Studies Undergraduate Lunch",
     "date":"10-16-2019",
     "day-of-week":"Wednesday",
@@ -35,8 +33,8 @@
     "description":"Join us for our first installment of quarterly lunches for students. Meet current GSS students, staff, and faculty."
   },
 
-  "3": {
-    "id":"3",
+  {
+    "id":"2",
     "name":"WNUR BBQ",
     "date":"10-14-2019",
     "day-of-week":"Monday",
@@ -49,13 +47,11 @@
     "organization":"WNUR",
     "membership":0,
     "location":"Lakefill Fire Pit",
-    "description":"Come hang out, meet people on WNUR, and have some bbq!
-                  All are welcome (not just people involved with WNUR).
-                  Invite your friends! There will be music and lots of good company :)"
+    "description":"Come hang out, meet people on WNUR, and have some bbq!\nAll are welcome (not just people involved with WNUR).\nInvite your friends! There will be music and lots of good company :)"
   },
 
-  "4": {
-    "id":"4",
+  {
+    "id":"3",
     "name":"Krishna Lunch",
     "date":"11-4-2019",
     "day-of-week":"Monday",
@@ -71,8 +67,8 @@
     "description":"Cheap vegetarian indian food every day of the week"
   },
 
-  "5": {
-    "id":"5",
+  {
+    "id":"4",
     "name":"DevSci Grad Student Welcome Back Event",
     "date":"10-22-2019",
     "day-of-week":"Tuesday",
@@ -85,13 +81,10 @@
     "organization":"Institute for Innovations in Developmental Sciences (DevSci)",
     "membership":0,
     "location":"Norris University Center, Lake Room, 1999 Campus Drive, Evanston, IL 60208",
-    "description":"This welcome event is open to potential, new and returning cluster members. It’s a great way to meet the directors and learn more about cluster opportunities, including future events, poster sessions, seed funds, fellowship, and the new Transdisciplinary Developmental Sciences Certificate.
-                   Cluster students are encouraged to bring a friend to learn more about the Center for Trandisciplinary Training and DevSci Cluster.
-                   Snacks will be provided! "
+    "description":"This welcome event is open to potential, new and returning cluster members. It’s a great way to meet the directors and learn more about cluster opportunities, including future events, poster sessions, seed funds, fellowship, and the new Transdisciplinary Developmental Sciences Certificate.\nCluster students are encouraged to bring a friend to learn more about the Center for Trandisciplinary Training and DevSci Cluster.\nSnacks will be provided! "
   },
-
-  "6": {
-    "id":"6",
+  {
+    "id":"5",
     "name":"Homecoming Social",
     "date":"10-22-2019",
     "day-of-week":"Tuesday",
@@ -105,5 +98,5 @@
     "membership":0,
     "location":"John Evans Center, 1800 Sheridan Road, Evanston, IL 60208",
     "description":"Celebrate student athletes and all things purple pride at this free event at the JEC! Food and free giveaways will be available. Sponsored by the Arch Society."
-  }
-}
+  },
+]
