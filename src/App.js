@@ -63,10 +63,8 @@ const App = () => {
       cartInfo.push({
         productId: productId,
         product: id2product[productId],
-        'S': 0,
-        'M': 0,
-        'L': 0,
-        'XL': 0,
+        'Going': 0,
+        'Not Going': 0
       });
       cartInfo[cartInfo.length - 1][size] += 1;
     }
@@ -84,26 +82,13 @@ const App = () => {
       cartInfo.push({
         productId: productId,
         product: id2product[productId],
-        'S': 0,
-        'M': 0,
-        'L': 0,
-        'XL': 0,
+        'Going': 0,
+        'Not Going': 0
       });
       cartInfo[index][size] = cartInfo[index][size] > 0 ? cartInfo[index][size] - 1 : 0;
     }
     setCartInfo(cartInfo);
     renderUpdate();
-  };
-
-  const computeRemaining = (productId) => {
-    const index = inCart(productId);
-    const remaining = {
-      'S': inventory[productId] ? (index === -1 ? (inventory[productId]['S']) : (inventory[productId]['S'] - cartInfo[index]['S'])) : 0,
-      'M': inventory[productId] ? (index === -1 ? (inventory[productId]['M']) : (inventory[productId]['M'] - cartInfo[index]['M'])) : 0,
-      'L': inventory[productId] ? (index === -1 ? (inventory[productId]['L']) : (inventory[productId]['L'] - cartInfo[index]['L'])) : 0,
-      'XL': inventory[productId] ? (index === -1 ? (inventory[productId]['XL']) : (inventory[productId]['XL'] - cartInfo[index]['XL'])) : 0,
-    };
-    return remaining;
   };
 
   return (
@@ -136,7 +121,7 @@ const App = () => {
         </Column>
         {products.map(product =>
           <Column size='one-third'>
-            <Product product={product} addToCart={addCartItem} remaining={ computeRemaining(product.sku) } />
+            <Product product={product} addToCart={addCartItem} />
           </Column>
         )}
       </Column.Group>
