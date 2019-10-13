@@ -99,4 +99,20 @@
     "location":"John Evans Center, 1800 Sheridan Road, Evanston, IL 60208",
     "description":"Celebrate student athletes and all things purple pride at this free event at the JEC! Food and free giveaways will be available. Sponsored by the Arch Society."
   },
+  {
+    "id":"7",
+    "name":"Food Truck Festival",
+    "date":"10-22-2019",
+    "day-of-week":"Tuesday",
+    "time-start":"10:30",
+    "time-end":"14:00",
+    "food-type":"None",
+    "dietary-restrictions":"None",
+    "event-type":"Social",
+    "cost":"None",
+    "organization":"Northwestern Homecoming",
+    "membership":0,
+    "location":"Arts Circle",
+    "description":"Food Truck festival for Homecoming week"
+  }
 ]

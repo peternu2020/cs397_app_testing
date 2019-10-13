@@ -2,7 +2,7 @@ import React from 'react';
 import 'rbx/index.css';
 import { Card, Button, Content, Media, Title } from 'rbx';
 
-const CartItem = ({ product, size, amount, removeFromCart }) => {
+const CartItem = ({ product, going, amount, removeFromCart }) => {
   return (
     <Card>
       <Card.Image>
@@ -14,7 +14,7 @@ const CartItem = ({ product, size, amount, removeFromCart }) => {
         <Media>
           <Media.Item as="figure" align="left">
             <Button>
-              <span>{'Size: ' + size}</span>
+              <span>{going}</span>
             </Button>
           </Media.Item>
           <Media.Item>
@@ -32,7 +32,7 @@ const CartItem = ({ product, size, amount, removeFromCart }) => {
         <Content>
           {'$' + product.price + ' per item'}
         </Content>
-        <Button onClick={() => { removeFromCart(product.sku, size); }
+        <Button onClick={() => { removeFromCart(product.sku, going); }
         } rounded>
           Remove
           </Button>
