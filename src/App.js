@@ -24,6 +24,7 @@ const App = () => {
   const [cartActive, setCart] = useState(false);
   const [cartInfo, setCartInfo] = useState([]);
   const [inventory, setInventory] = useState({});
+  const [eventList, setEvents] = useState({});
 
   useEffect(() => {
     const ref = firebase.database().ref('/')
@@ -31,7 +32,7 @@ const App = () => {
     ref.on('value', (snapshot) =>
     {
       if (snapshot.val())
-        console.log(snapshot.val());
+        setEvents(snapshot.val());
       else
         console.log("no data.")
 
@@ -61,6 +62,8 @@ const App = () => {
   const renderUpdate = useRenderUpdate();
 
   const products = Object.values(data);
+
+  const events = Object.values(eventList)
 
   const id2product = {}
   let i;
@@ -142,9 +145,12 @@ const App = () => {
       <Column.Group multiline>
         <Column size='full'>
         </Column>
-        {products.map(product =>
+        {console.log("hello")}
+        {console.log(events)}
+        {events.map(singleEvent =>
           <Column size='one-third'>
-            <Product product={product} addToCart={addCartItem} />
+            {console.log(singleEvent)}
+            <Product singleEvent={singleEvent} addToCart={addCartItem} />
           </Column>
         )}
       </Column.Group>

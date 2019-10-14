@@ -2,12 +2,14 @@ import React from 'react';
 import 'rbx/index.css';
 import { Card, Dropdown, Button, Content, Media, Title } from 'rbx';
 
-const Product = ({ product, addToCart }) => {
+const Product = ({ singleEvent, addToCart }) => {
     return (
         <Card>
             <Card.Image>
                 <div style={{ textAlign: 'center', width: '100%' }}>
-                    <img src={`./data/products/${product.sku}_2.jpg`} alt='' />
+                    {console.log("in card")}
+                    {console.log(singleEvent)}
+                    <img src={`./data/events/${singleEvent.id}.jpg`} alt='' />
                 </div>
             </Card.Image>
             <Card.Content>
@@ -21,23 +23,23 @@ const Product = ({ product, addToCart }) => {
                             </Dropdown.Trigger>
                             <Dropdown.Menu>
                                 <Dropdown.Content>
-                                <Dropdown.Item onClick={ () => addToCart(product.sku, 'Going') }> Going </Dropdown.Item> 
-                                <Dropdown.Item> Not Going </Dropdown.Item> 
+                                <Dropdown.Item onClick={ () => addToCart(singleEvent.id, 'Going') }> Going </Dropdown.Item>
+                                <Dropdown.Item> Not Going </Dropdown.Item>
                                 </Dropdown.Content>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Media.Item>
                     <Media.Item>
                         <Title as="p" size={6}>
-                            {product.title}
+                            {singleEvent.name}
                         </Title>
                         <Title as="p" subtitle size={6}>
-                            {'$' + product.price}
+                            {singleEvent.cost}
                         </Title>
                     </Media.Item>
                 </Media>
                 <Content>
-                    {product.style}
+                    {singleEvent.description}
                 </Content>
             </Card.Content>
         </Card>
