@@ -49,7 +49,7 @@ const Product = ({ singleEvent, addToCart }) => {
                         </Dropdown>
                     </Media.Item>
                 </Media>
-                <Content>
+                <Content style = {{overflowY : 'auto', height:'50px'}}>
                     {singleEvent.description}
                 </Content>
             </Card.Content>
