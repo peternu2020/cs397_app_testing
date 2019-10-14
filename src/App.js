@@ -145,11 +145,8 @@ const App = () => {
       <Column.Group multiline>
         <Column size='full'>
         </Column>
-        {console.log("hello")}
-        {console.log(events)}
         {events.map(singleEvent =>
           <Column size='one-third'>
-            {console.log(singleEvent)}
             <Product singleEvent={singleEvent} addToCart={addCartItem} />
           </Column>
         )}

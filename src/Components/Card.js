@@ -1,19 +1,60 @@
 import React from 'react';
 import 'rbx/index.css';
-import { Card, Dropdown, Button, Content, Media, Title } from 'rbx';
+import { Card, Dropdown, Button, Content, Media, Title, Level } from 'rbx';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: 1000,
+    height: 1000,
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
+  },
+  titleBar: {
+    background:
+      'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+      'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
+  icon: {
+    color: 'white',
+  },
+}));
 
 const Product = ({ singleEvent, addToCart }) => {
     return (
         <Card>
+            {/*
             <Card.Image>
                 <div style={{ textAlign: 'center', width: '100%' }}>
-                    {console.log("in card")}
-                    {console.log(singleEvent)}
                     <img src={`./data/events/${singleEvent.id}.jpg`} alt='' />
                 </div>
             </Card.Image>
+            */}
             <Card.Content>
                 <Media>
+                    <Media.Item>
+                        <Title as="p" size={6}>
+                            {singleEvent.name}
+                        </Title>
+                        <Level>
+                          <Level.Item align="left">
+                            cost: {singleEvent.cost}
+                          </Level.Item>
+                      </Level>
+                      <Level>
+                        <Level.Item align="left">
+                          time: {singleEvent.time_start}
+                        </Level.Item>
+                      </Level>
+                    </Media.Item>
+
                     <Media.Item as="figure" align="left">
                         <Dropdown>
                             <Dropdown.Trigger>
@@ -28,14 +69,6 @@ const Product = ({ singleEvent, addToCart }) => {
                                 </Dropdown.Content>
                             </Dropdown.Menu>
                         </Dropdown>
-                    </Media.Item>
-                    <Media.Item>
-                        <Title as="p" size={6}>
-                            {singleEvent.name}
-                        </Title>
-                        <Title as="p" subtitle size={6}>
-                            {singleEvent.cost}
-                        </Title>
                     </Media.Item>
                 </Media>
                 <Content>
