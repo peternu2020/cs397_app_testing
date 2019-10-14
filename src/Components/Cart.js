@@ -21,7 +21,7 @@ const ShoppingCart = ({ cartInfoContent, removeFromCart }) => {
                 <Column size='full'>
                 </Column>
                 {contents.map(content =>
-                    <Column size='full' key={content[0].sku}>
+                    <Column size='full' key={content[0].id}>
                         <CartItem product={content[0]} going={content[1]} amount={content[2]} removeFromCart={removeFromCart} />
                     </Column>
                 )}

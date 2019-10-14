@@ -67,8 +67,8 @@ const App = () => {
 
   const id2product = {}
   let i;
-  for (i = 0; i < products.length; i += 1) {
-    id2product[products[i].sku] = products[i];
+  for (i = 0; i < events.length; i += 1) {
+    id2product[events[i].id] = events[i];
   }
 
   useEffect(() => {
@@ -97,6 +97,7 @@ const App = () => {
     setCartInfo(cartInfo);
     setCart(true);
     renderUpdate();
+    {console.log(cartInfo)}
   };
 
   const removeCartItem = (productId, size) => {

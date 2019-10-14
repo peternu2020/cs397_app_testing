@@ -7,7 +7,7 @@ const CartItem = ({ product, going, amount, removeFromCart }) => {
     <Card>
       <Card.Image>
         <div style={{ textAlign: 'center', width: '100%' }}>
-          <img src={`./data/products/${product.sku}_2.jpg`} alt='' />
+          <img src={`./data/events/${product.id}.jpg`} alt='' />
         </div>
       </Card.Image>
       <Card.Content>
@@ -19,18 +19,18 @@ const CartItem = ({ product, going, amount, removeFromCart }) => {
           </Media.Item>
           <Media.Item>
             <Title as="p" size={6}>
-              {product.title}
+              {product.name}
             </Title>
             <Title as="p" subtitle size={6}>
-              {'$' + amount * product.price}
+              {product.date}
             </Title>
           </Media.Item>
         </Media>
         <Content>
-          {"Quantity: " + amount}
+          {(amount===1) ? amount+" person is going" : amount+" people are going"}
         </Content>
         <Content>
-          {'$' + product.price + ' per item'}
+          {product.location}
         </Content>
         <Button onClick={() => { removeFromCart(product.sku, going); }
         } rounded>
