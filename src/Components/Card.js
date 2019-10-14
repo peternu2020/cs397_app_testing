@@ -30,13 +30,13 @@ const useStyles = makeStyles(theme => ({
 const Product = ({ singleEvent, addToCart }) => {
     return (
         <Card>
-            {/*
+
             <Card.Image>
                 <div style={{ textAlign: 'center', width: '100%' }}>
-                    <img src={`./data/events/${singleEvent.id}.jpg`} alt='' />
+                    <img src={`./data/events/${singleEvent.id}.jpg`} alt='' id="eventpic" />
                 </div>
             </Card.Image>
-            */}
+
             <Card.Content>
                 <Media>
                     <Media.Item>
@@ -50,7 +50,12 @@ const Product = ({ singleEvent, addToCart }) => {
                       </Level>
                       <Level>
                         <Level.Item align="left">
-                          time: {singleEvent.time_start}
+                          date: {singleEvent.day_of_week},  {singleEvent.date}
+                        </Level.Item>
+                      </Level>
+                      <Level>
+                        <Level.Item align="left">
+                          time: {singleEvent.time_start} - {singleEvent.time_end}
                         </Level.Item>
                       </Level>
                     </Media.Item>

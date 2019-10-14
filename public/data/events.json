@@ -2,7 +2,7 @@
   {
     "id":"0",
     "name":"Cheap Lunch",
-    "date":"10_16_2019",
+    "date":"10/16/2019",
     "day_of_week":"Wednesday",
     "time_start":"12:00",
     "time_end":"13:00",
@@ -19,7 +19,7 @@
   {
     "id":"1",
     "name":"Gender & Sexuality Studies Undergraduate Lunch",
-    "date":"10_16_2019",
+    "date":"10/16/2019",
     "day_of_week":"Wednesday",
     "time_start":"12:30",
     "time_end":"14:00",
@@ -36,7 +36,7 @@
   {
     "id":"2",
     "name":"WNUR BBQ",
-    "date":"10_14_2019",
+    "date":"10/14/2019",
     "day_of_week":"Monday",
     "time_start":"17:30",
     "time_end":"20:00",
@@ -53,7 +53,7 @@
   {
     "id":"3",
     "name":"Krishna Lunch",
-    "date":"11_4_2019",
+    "date":"11/4/2019",
     "day_of_week":"Monday",
     "time_start":"10:50",
     "time_end":"11:00",
@@ -70,7 +70,7 @@
   {
     "id":"4",
     "name":"DevSci Grad Student Welcome Back Event",
-    "date":"10_22_2019",
+    "date":"10/22/2019",
     "day_of_week":"Tuesday",
     "time_start":"15:00",
     "time_end":"17:00",
@@ -86,7 +86,7 @@
   {
     "id":"5",
     "name":"Homecoming Social",
-    "date":"10_22_2019",
+    "date":"10/22/2019",
     "day_of_week":"Tuesday",
     "time_start":"18:00",
     "time_end":"20:00",
@@ -102,7 +102,7 @@
   {
     "id":"7",
     "name":"Food Truck Festival",
-    "date":"10_22_2019",
+    "date":"10/22/2019",
     "day_of_week":"Tuesday",
     "time_start":"10:30",
     "time_end":"14:00",
