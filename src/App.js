@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'rbx/index.css';
-import { Column, Container, Navbar, Button, Icon, Modal, Box } from 'rbx';
+import { Column, Container, Navbar, Button, Icon, Modal, Box, Dropdown } from 'rbx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Product from './Components/Card';
@@ -19,31 +19,42 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
+
+
 const App = () => {
   const [data, setData] = useState({});
   const [cartActive, setCart] = useState(false);
   const [cartInfo, setCartInfo] = useState([]);
   const [inventory, setInventory] = useState({});
   const [eventList, setEvents] = useState({});
+  const [filteredList, setFilter] = useState({});
+  const [activeDay, setDay] = useState('All Days');
+  const [activeCost, setCost] = useState('All Costs');
+  const [activeTime, setTime] = useState('All Times')
+
+
 
   useEffect(() => {
     const ref = firebase.database().ref('/')
     console.log(ref)
     ref.on('value', (snapshot) =>
     {
-      if (snapshot.val())
-        setEvents(snapshot.val());
+      if (snapshot.val()) {
+        const data = snapshot.val()
+        setEvents(data);
+        setFilter(data);
+      }
       else
         console.log("no data.")
 
     });
-    const fetchInventory = async () => {
-      const response = await fetch('./data/items.json');
-      const json = await response.json();
-      setInventory(json);
-    };
-
-    fetchInventory();
+    // const fetchInventory = async () => {
+    //   const response = await fetch('./data/items.json');
+    //   const json = await response.json();
+    //   setInventory(json);
+    // };
+    //
+    // fetchInventory();
   }, []);
 
   const inCart = (productId) => {
@@ -65,20 +76,22 @@ const App = () => {
 
   const events = Object.values(eventList)
 
+  const filteredEvents = Object.values(filteredList)
+
   const id2product = {}
   let i;
   for (i = 0; i < events.length; i += 1) {
     id2product[events[i].id] = events[i];
   }
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch('./data/products.json');
-      const json = await response.json();
-      setData(json);
-    };
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const response = await fetch('./data/products.json');
+  //     const json = await response.json();
+  //     setData(json);
+  //   };
+  //   fetchProducts();
+  // }, []);
 
   const addCartItem = (productId, size) => {
     const index = inCart(productId);
@@ -118,6 +131,89 @@ const App = () => {
     renderUpdate();
   };
 
+  const filterItems = (filtertype, val) => {
+    setFilter(events.filter(event => {
+      switch(filtertype) {
+        case 'Day':
+          if (val === 'All Days')
+            return event
+          else
+            return event.day_of_week === val
+          break;
+        case 'Cost':
+          if (val === 'All Costs')
+            return event.day_of_week === activeDay
+          else {
+            if (val === 'Free')
+              return event.day_of_week === activeDay && event.cost === val
+            else
+              return event.day_of_week === activeDay && event.cost != 'Free'
+          }
+          break;
+        case 'Time':
+          if (activeTime === 'All Times')
+            return event
+          else
+            return event.day_of_week === activeDay
+          break;
+      }}))
+    }
+
+
+  const DayFilter = ({ state }) => {
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'All Days']
+    return (
+      <Dropdown>
+        <Dropdown.Trigger>
+          <Button>
+            <span>{activeDay}</span>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu>
+          <Dropdown.Content>
+            {days.map(day =>
+              <Dropdown.Item
+                onClick={() => {
+                  setDay(day)
+                  filterItems("Day", day)
+                }}
+              >
+                {day}
+              </Dropdown.Item>
+            )}
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    )
+  }
+
+  const CostFilter = ({ state }) => {
+    const costs = ['Free', 'Not Free', 'All Costs']
+    return (
+      <Dropdown>
+        <Dropdown.Trigger>
+          <Button>
+            <span>{activeCost}</span>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu>
+          <Dropdown.Content>
+            {costs.map(cost =>
+              <Dropdown.Item
+                onClick={() => {
+                  setCost(cost)
+                  filterItems("Cost", cost)
+                }}
+              >
+                {cost}
+              </Dropdown.Item>
+            )}
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    )
+  }
+
   return (
     <Container as='div' style={{ width: '100%', paddingTop: '20px' }}>
       <Navbar fixed='top' as='div' style={{ paddingLeft: '60px', paddingRight: '50px', paddingTop: '10px' }}>
@@ -133,6 +229,8 @@ const App = () => {
             </Button>
           </Navbar.Item>
         </Navbar.Brand>
+        <DayFilter />
+        <CostFilter />
       </Navbar>
       <Modal active={cartActive}>
         <Modal.Background />
@@ -146,7 +244,7 @@ const App = () => {
       <Column.Group multiline>
         <Column size='full'>
         </Column>
-        {events.map(singleEvent =>
+        {filteredEvents.map(singleEvent =>
           <Column size='one-third'>
             <Product singleEvent={singleEvent} addToCart={addCartItem} />
           </Column>
