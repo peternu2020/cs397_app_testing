@@ -4,7 +4,7 @@ import { Card, Dropdown, Button, Content, Media, Title, Level } from 'rbx';
 
 const Product = ({ singleEvent, addToCart }) => {
     return (
-        <Card>
+        <Card id="eventcard">
             <Card.Image>
                 <div style={{ textAlign: 'center', width: '100%' }}>
                     <img src={`./data/events/${singleEvent.id}.jpg`} alt='' id="eventpic" />
@@ -31,6 +31,9 @@ const Product = ({ singleEvent, addToCart }) => {
                           time: {singleEvent.time_start} - {singleEvent.time_end}
                         </Level.Item>
                       </Level>
+                      <Content align="left" style = {{overflowY : 'auto', height:'50px'}}>
+                          location: {singleEvent.location}
+                      </Content>
                     </Media.Item>
 
                     <Media.Item as="figure" align="left">
