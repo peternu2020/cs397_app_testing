@@ -30,7 +30,7 @@ const App = () => {
   const [filteredList, setFilter] = useState({});
   const [activeDay, setDay] = useState('All Days');
   const [activeCost, setCost] = useState('All Costs');
-  const [activeTime, setTime] = useState('All Times')
+  const [activeTime, setTime] = useState('All Times');
 
 
 
@@ -131,32 +131,31 @@ const App = () => {
     renderUpdate();
   };
 
-  const filterItems = (filtertype, val) => {
-    setFilter(events.filter(event => {
-      switch(filtertype) {
-        case 'Day':
-          if (val === 'All Days')
-            return event
-          else
-            return event.day_of_week === val
-          break;
-        case 'Cost':
-          if (val === 'All Costs')
-            return event.day_of_week === activeDay
-          else {
-            if (val === 'Free')
-              return event.day_of_week === activeDay && event.cost === val
-            else
-              return event.day_of_week === activeDay && event.cost != 'Free'
-          }
-          break;
-        case 'Time':
-          if (activeTime === 'All Times')
-            return event
-          else
-            return event.day_of_week === activeDay
-          break;
-      }}))
+  const filterItems = (day, cost, time) => {
+    if(day === 'All Days' && cost === 'All Costs')
+      setFilter(events)
+    else if (cost === 'All Costs') {
+      setFilter(events.filter(event => {
+        return event.day_of_week === day
+        }))
+    }
+    else if (day === 'All Days') {
+      setFilter(events.filter(event => {
+        if (cost === 'Free')
+          return event.cost === 'Free'
+        else
+          return event.cost !== 'Free'
+      }))
+    }
+    else {
+      setFilter(events.filter(event => {
+        if (cost === 'Free')
+          return event.day_of_week === day && event.cost === 'Free'
+        else
+          return event.day_of_week === day && event.cost !== 'Free'
+      }))
+    }
+
     }
 
 
@@ -175,7 +174,7 @@ const App = () => {
               <Dropdown.Item
                 onClick={() => {
                   setDay(day)
-                  filterItems("Day", day)
+                  filterItems(day, activeCost, activeTime)
                 }}
               >
                 {day}
@@ -202,10 +201,37 @@ const App = () => {
               <Dropdown.Item
                 onClick={() => {
                   setCost(cost)
-                  filterItems("Cost", cost)
+                  filterItems(activeDay, cost, activeTime)
                 }}
               >
                 {cost}
+              </Dropdown.Item>
+            )}
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    )
+  }
+
+  const TimeFilter = ({ state }) => {
+    const times = ['Breakfast', 'Lunch', 'Dinner', 'All Times']
+    return (
+      <Dropdown>
+        <Dropdown.Trigger>
+          <Button>
+            <span>{activeTime}</span>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu>
+          <Dropdown.Content>
+            {times.map(time =>
+              <Dropdown.Item
+                onClick={() => {
+                  setTime(time)
+                  filterItems(activeDay, activeCost, time)
+                }}
+              >
+                {time}
               </Dropdown.Item>
             )}
           </Dropdown.Content>
@@ -231,6 +257,7 @@ const App = () => {
         </Navbar.Brand>
         <DayFilter />
         <CostFilter />
+        <TimeFilter />
       </Navbar>
       <Modal active={cartActive}>
         <Modal.Background />
