@@ -20,7 +20,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-
 const App = () => {
   const [data, setData] = useState({});
   const [cartActive, setCart] = useState(false);
@@ -131,15 +130,30 @@ const App = () => {
     renderUpdate();
   };
 
+  const timeToMins = (time) => {
+    const hrnmins = time.split(":")
+    return Number(hrnmins[0])*60+Number(hrnmins[1])
+  }
+
+  const meal = (time) => {
+    if (timeToMins(time) <= timeToMins("10:00"))
+      return 'Breakfast'
+    else if (timeToMins(time) >= timeToMins("16:00"))
+      return 'Dinner'
+    else {
+      return 'Lunch'
+    }
+  }
+
   const filterItems = (day, cost, time) => {
-    if(day === 'All Days' && cost === 'All Costs')
+    if(day === 'All Days' && cost === 'All Costs' && time == 'All Times')
       setFilter(events)
-    else if (cost === 'All Costs') {
+    else if (cost === 'All Costs' && time === 'All Times') {
       setFilter(events.filter(event => {
         return event.day_of_week === day
         }))
     }
-    else if (day === 'All Days') {
+    else if (day === 'All Days' && time == 'All Times') {
       setFilter(events.filter(event => {
         if (cost === 'Free')
           return event.cost === 'Free'
@@ -147,7 +161,12 @@ const App = () => {
           return event.cost !== 'Free'
       }))
     }
-    else {
+    else if (day === 'All Days' && cost === 'All Costs') {
+      setFilter(events.filter(event => {
+        return meal(event.time_start) === time
+      }))
+    }
+    else if (time == 'All Times'){
       setFilter(events.filter(event => {
         if (cost === 'Free')
           return event.day_of_week === day && event.cost === 'Free'
@@ -155,7 +174,27 @@ const App = () => {
           return event.day_of_week === day && event.cost !== 'Free'
       }))
     }
-
+    else if (day == 'All Days'){
+      setFilter(events.filter(event => {
+        if (cost === 'Free')
+          return meal(event.time_start) === time && event.cost === 'Free'
+        else
+          return meal(event.time_start) === time && event.cost !== 'Free'
+      }))
+    }
+    else if (cost == 'All Costs'){
+      setFilter(events.filter(event => {
+        return meal(event.time_start) === time && event.day_of_week === day
+      }))
+    }
+    else {
+      setFilter(events.filter(event => {
+        if (cost === 'Free')
+          return meal(event.time_start) === time && event.cost === 'Free' && event.day_of_week === day
+        else
+          return meal(event.time_start) === time && event.cost !== 'Free' && event.day_of_week === day
+      }))
+    }
     }
 
 
