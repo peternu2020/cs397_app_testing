@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'rbx/index.css';
 import { Column, Container, Navbar, Button, Icon, Modal, Box, Dropdown } from 'rbx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 import Product from './Components/Card';
 import Cart from './Components/Cart';
 import firebase from 'firebase/app';
@@ -284,12 +284,12 @@ const App = () => {
       <Navbar fixed='top' as='div' style={{ paddingLeft: '60px', paddingRight: '50px', paddingTop: '10px' }}>
         <Navbar.Brand>
           <Navbar.Item>
-            <h1 style={{ fontSize: '24px' }}><strong>Catalog</strong></h1>
+            <h1 style={{ fontSize: '24px' }}><strong>Events</strong></h1>
           </Navbar.Item>
           <Navbar.Item>
             <Button color='black' onClick={() => setCart(true)}>
               <Icon>
-                <FontAwesomeIcon icon={faShoppingCart} />
+                <FontAwesomeIcon icon={faUtensils} />
               </Icon>
             </Button>
           </Navbar.Item>

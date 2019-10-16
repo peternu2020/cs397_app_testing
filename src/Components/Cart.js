@@ -16,7 +16,7 @@ const ShoppingCart = ({ cartInfoContent, removeFromCart }) => {
 
     return (
         <Container>
-            <Title>Shopping Cart</Title>
+            <Title>My Events</Title>
             <Column.Group multiline>
                 <Column size='full'>
                 </Column>
