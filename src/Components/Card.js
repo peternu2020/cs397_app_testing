@@ -18,7 +18,7 @@ const displayTime = (time) => {
 
 const Product = ({ singleEvent, addToCart }) => {
     return (
-        <Card id="eventcard">
+        <Card id="eventcard" style = {{height: '720px'}}>
             <Card.Image>
                 <div style={{ textAlign: 'center', width: '100%' }}>
                     <img src={`./data/events/${singleEvent.id}.jpg`} alt='' id="eventpic" />
@@ -32,21 +32,21 @@ const Product = ({ singleEvent, addToCart }) => {
                         </Title>
                         <Level>
                           <Level.Item align="left">
-                            cost: {singleEvent.cost}
+                            <b>Cost: </b> {singleEvent.cost}
                           </Level.Item>
                       </Level>
                       <Level>
                         <Level.Item align="left">
-                          date: {singleEvent.day_of_week},  {(singleEvent.date).toString().replace(/_/g,"/")}
+                          <b>Date: </b>  {singleEvent.day_of_week},  {(singleEvent.date).toString().replace(/_/g,"/")}
                         </Level.Item>
                       </Level>
                       <Level>
                         <Level.Item align="left">
-                          time: {displayTime(singleEvent.time_start)} - {displayTime(singleEvent.time_end)}
+                          <b>Time: </b> {displayTime(singleEvent.time_start)} - {displayTime(singleEvent.time_end)}
                         </Level.Item>
                       </Level>
-                      <Content align="left" style = {{overflowY : 'auto', height:'50px'}}>
-                          location: {singleEvent.location}
+                      <Content align="left" style = {{overflowY : 'auto', height:'72px', width: '100%'}}>
+                          <b>Location:</b> {singleEvent.location}
                       </Content>
                     </Media.Item>
 
@@ -66,7 +66,7 @@ const Product = ({ singleEvent, addToCart }) => {
                         </Dropdown>
                     </Media.Item>
                 </Media>
-                <Content style = {{overflowY : 'auto', height:'50px'}}>
+                <Content style = {{overflowY : 'auto', height:'70px'}}>
                     {singleEvent.description}
                 </Content>
             </Card.Content>
