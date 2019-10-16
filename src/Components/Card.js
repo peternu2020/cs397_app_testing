@@ -2,6 +2,20 @@ import React from 'react';
 import 'rbx/index.css';
 import { Card, Dropdown, Button, Content, Media, Title, Level } from 'rbx';
 
+
+const displayTime = (time) => {
+    console.log(time)
+    const times = time.split(":");
+    let hours = times[0] > 12 ? times[0] - 12 : times[0];
+    hours = (hours == '00') ? 12 : hours
+    const minutes = times[1];
+    const suffix = times[0] >= 12 ? 'PM' : 'AM';
+    console.log(hours)
+    return hours + ":" + minutes + " " + suffix;
+}
+
+
+
 const Product = ({ singleEvent, addToCart }) => {
     return (
         <Card id="eventcard">
@@ -23,12 +37,12 @@ const Product = ({ singleEvent, addToCart }) => {
                       </Level>
                       <Level>
                         <Level.Item align="left">
-                          date: {singleEvent.day_of_week},  {singleEvent.date}
+                          date: {singleEvent.day_of_week},  {(singleEvent.date).toString().replace(/_/g,"/")}
                         </Level.Item>
                       </Level>
                       <Level>
                         <Level.Item align="left">
-                          time: {singleEvent.time_start} - {singleEvent.time_end}
+                          time: {displayTime(singleEvent.time_start)} - {displayTime(singleEvent.time_end)}
                         </Level.Item>
                       </Level>
                       <Content align="left" style = {{overflowY : 'auto', height:'50px'}}>
