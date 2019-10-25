@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'rbx/index.css';
 import { Column, Container, Navbar, Button, Icon, Modal, Box, Dropdown } from 'rbx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
 import Product from './Components/Card';
 import Cart from './Components/Cart';
 import firebase from 'firebase/app';
@@ -24,6 +24,7 @@ const db = firebase.database();
 const App = () => {
   const [data, setData] = useState({});
   const [cartActive, setCart] = useState(false);
+  const [eventsActive, setMyEvents] = useState(false);
   const [cartInfo, setCartInfo] = useState([]);
   const [inventory, setInventory] = useState({});
   const [eventList, setEvents] = useState({});
@@ -294,6 +295,13 @@ const App = () => {
               </Icon>
             </Button>
           </Navbar.Item>
+          <Navbar.Item>
+            <Button color='black' onClick={() => setMyEvents(true)}>
+              <Icon>
+                <FontAwesomeIcon icon={faCalendarPlus} />
+              </Icon>
+            </Button>
+          </Navbar.Item>
         </Navbar.Brand>
         <DayFilter />
         <CostFilter />
@@ -307,6 +315,15 @@ const App = () => {
           </Box>
         </Modal.Content>
         <Modal.Close onClick={() => setCart(false)} />
+      </Modal>
+      <Modal active={eventsActive}>
+        <Modal.Background />
+        <Modal.Content>
+          <Box>
+            <MyEvents></MyEvents>
+          </Box>
+        </Modal.Content>
+        <Modal.Close onClick={() => setMyEvents(false)} />
       </Modal>
       <Column.Group multiline>
         <Column size='full'>
