@@ -6,6 +6,7 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 import Product from './Components/Card';
 import Cart from './Components/Cart';
 import firebase from 'firebase/app';
+import MyEvents from './Components/MyEvents';
 import 'firebase/database';
 
 var firebaseConfig = {
@@ -316,6 +317,7 @@ const App = () => {
           </Column>
         )}
       </Column.Group>
+  
     </Container>
   );
 };
