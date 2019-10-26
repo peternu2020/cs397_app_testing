@@ -2,7 +2,82 @@ import React from 'react';
 import 'rbx/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
-import { Card, Button, Content, Field, Label, Control, Input, Radio, Textarea, File } from 'rbx';
+import { Card, Button, Content, Field, Label, Control, Input, Radio, Textarea, File, Select } from 'rbx';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+
+export function DatePickers() {
+  // The first commit of Material-UI
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+  const handleDateChange = date => {
+    setSelectedDate(date);
+  };
+  return (
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container>
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="MM/dd/yyyy"
+          margin="normal"
+          id="date-picker-inline"
+          label="Pick Date"
+          value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change date',
+          }}
+        />
+      </Grid>
+    </MuiPickersUtilsProvider>
+  );
+}
+
+export function TimePickers() {
+  // The first commit of Material-UI
+  const [selectedTimeFrom, setSelectedTimeFrom] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [selectedTimeTo, setSelectedTimeTo] = React.useState(new Date('2014-08-18T21:11:54'));
+
+  const handleTimeChangeFrom = date => {
+    setSelectedTimeFrom(date);
+  };
+  const handleTimeChangeTo = date => {
+    setSelectedTimeTo(date);
+  };
+  return (
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container>
+        <KeyboardTimePicker
+          margin="normal"
+          id="time-picker-from"
+          label="From"
+          value={selectedTimeFrom}
+          onChange={handleTimeChangeFrom}
+          KeyboardButtonProps={{
+            'aria-label': 'change time',
+          }}
+        />
+        <KeyboardTimePicker
+          margin="normal"
+          id="time-picker-to"
+          label="To"
+          value={selectedTimeTo}
+          onChange={handleTimeChangeTo}
+          KeyboardButtonProps={{
+            'aria-label': 'change time',
+          }}
+        />
+      </Grid>
+    </MuiPickersUtilsProvider>
+  );
+}
+
 
 const EventTemplate = ({ hostID }) => {
     return (
@@ -14,6 +89,8 @@ const EventTemplate = ({ hostID }) => {
                         <Input type="text" placeholder="Name of Event" />
                     </Control>
                 </Field>
+                <DatePickers/>
+                <TimePickers/>
                 <Field>
                     <Label>Food Type</Label>
                     <Control>
@@ -44,7 +121,16 @@ const EventTemplate = ({ hostID }) => {
                         <Input type="text" placeholder="Dietary Restrictions" />
                     </Control>
                 </Field>
-                <Field >
+                <Field>
+                  <Label>Event Type</Label>
+                  <Select.Container>
+                    <Select>
+                      <Select.Option>Social</Select.Option>
+                      <Select.Option>Professional</Select.Option>
+                    </Select>
+                  </Select.Container>
+                </Field>
+                <Field>
                     <Label>Member Only?</Label>
                     <Control>
                         <Label>
