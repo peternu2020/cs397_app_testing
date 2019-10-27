@@ -7,6 +7,7 @@ import Product from './Components/Card';
 import Cart from './Components/Cart';
 import firebase from 'firebase/app';
 import MyEvents from './Components/MyEvents';
+import SignInPrompt from './Components/SignInPrompt';
 import 'firebase/database';
 
 var firebaseConfig = {
@@ -32,8 +33,8 @@ const App = () => {
   const [activeDay, setDay] = useState('All Days');
   const [activeCost, setCost] = useState('All Costs');
   const [activeTime, setTime] = useState('All Times');
-
-
+  const [userName, setUserName] = useState("");
+  
 
   useEffect(() => {
     const ref = firebase.database().ref('/')
@@ -283,7 +284,7 @@ const App = () => {
 
   return (
     <Container as='div' style={{ width: '100%', paddingTop: '20px' }}>
-      <Navbar fixed='top' as='div' style={{ paddingLeft: '60px', paddingRight: '50px', paddingTop: '10px' }}>
+      <Navbar fixed='top' as='div' style={{ paddingLeft: '60px', paddingRight: '50px', paddingTop: '10px', width: '80%', }}>
         <Navbar.Brand>
           <Navbar.Item>
             <h1 style={{ fontSize: '24px' }}><strong>Events</strong></h1>
@@ -303,10 +304,13 @@ const App = () => {
             </Button>
           </Navbar.Item>
         </Navbar.Brand>
+        <SignInPrompt userName={userName} onButtonClick={setUserName} />
         <DayFilter />
         <CostFilter />
         <TimeFilter />
+        <h1>{userName ? "Logged in as " + userName : "Not logged in."}</h1>
       </Navbar>
+      
       <Modal active={cartActive}>
         <Modal.Background />
         <Modal.Content>
