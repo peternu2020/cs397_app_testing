@@ -86,7 +86,13 @@ const EventTemplate = ({ hostID }) => {
   const [Organization, setOrganization] = React.useState('');
   const [Location, setLocation] = React.useState('');
   
+  const [Member_Only, setMemberOnly] = React.useState('');
+  const [Event_Type, setEventType] = React.useState('');
+  
   const [Description, setDescription] = React.useState('');
+  
+  const [FileUpload, setFileUpload] = React.useState('');
+  
     return (
         <Card>
             <Card.Content>
@@ -124,8 +130,8 @@ const EventTemplate = ({ hostID }) => {
                   <Label>Event Type</Label>
                   <Select.Container>
                     <Select>
-                      <Select.Option>Social</Select.Option>
-                      <Select.Option>Professional</Select.Option>
+                      <Select.Option value = {Event_Type} onChange={e => setEventType("Social")}>Social</Select.Option>
+                      <Select.Option value = {Event_Type} onChange={e => setEventType("Professional")}>Professional</Select.Option>
                     </Select>
                   </Select.Container>
                 </Field>
@@ -133,10 +139,12 @@ const EventTemplate = ({ hostID }) => {
                     <Label>Member Only?</Label>
                     <Control>
                         <Label>
-                            <Radio name="exclusive" /> Yes
+                            <Radio name="exclusive" value = {Member_Only} 
+                            onChange={e => setMemberOnly("Yes")} /> Yes
                         </Label>
                         <Label>
-                            <Radio name="exclusive" /> No
+                            <Radio name="exclusive" value = {Member_Only} 
+                            onChange={e => setMemberOnly("No")}  /> No
                         </Label>
                     </Control>
                 </Field>
@@ -149,7 +157,7 @@ const EventTemplate = ({ hostID }) => {
                 </Field>
                 <File >
                     <File.Label>
-                        <File.Input name="resume" />
+                        <File.Input name="resume" onChange={e => setFileUpload(e.target.files[0]) }/>
                         <File.CTA>
                             <File.Icon>
                                 <FontAwesomeIcon icon={faUpload} />
