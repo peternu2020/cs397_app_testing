@@ -80,13 +80,21 @@ export function TimePickers() {
 
 
 const EventTemplate = ({ hostID }) => {
+  const [EventName, setEventName] = React.useState('');
+  const [FoodType, setFoodType] = React.useState('');
+  const [DietaryRestrictions, setDietaryRestrictions] = React.useState('');
+  const [Organization, setOrganization] = React.useState('');
+  const [Location, setLocation] = React.useState('');
+  
+  const [Description, setDescription] = React.useState('');
     return (
         <Card>
             <Card.Content>
                 <Field>
                     <Label>Event Name</Label>
                     <Control>
-                        <Input type="text" placeholder="Name of Event" />
+                        <Input type="text" placeholder="Name of Event" value={EventName}
+        onChange={e => setEventName(e.target.value)} />
                     </Control>
                 </Field>
                 <DatePickers/>
@@ -94,31 +102,22 @@ const EventTemplate = ({ hostID }) => {
                 <Field>
                     <Label>Food Type</Label>
                     <Control>
-                        <Input type="text" placeholder="Food Type" />
+                        <Input type="text" placeholder="Food Type" value={FoodType}
+        onChange={e => setFoodType(e.target.value)} />
                     </Control>
                 </Field>
                 <Field>
                     <Label>Dietary Restrictions</Label>
                     <Control>
-                        <Input type="text" placeholder="Dietary Restrictions" />
+                        <Input type="text" placeholder="Dietary Restrictions" value={DietaryRestrictions}
+        onChange={e => setDietaryRestrictions(e.target.value)} />
                     </Control>
                 </Field>
                 <Field>
                     <Label>Organization</Label>
                     <Control>
-                        <Input type="text" placeholder="Organization Name" />
-                    </Control>
-                </Field>
-                <Field>
-                    <Label>Location</Label>
-                    <Control>
-                        <Input type="text" placeholder="Location" />
-                    </Control>
-                </Field>
-                <Field>
-                    <Label>Dietary Restrictions</Label>
-                    <Control>
-                        <Input type="text" placeholder="Dietary Restrictions" />
+                        <Input type="text" placeholder="Organization Name" value={Organization}
+        onChange={e => setOrganization(e.target.value)} />
                     </Control>
                 </Field>
                 <Field>
@@ -144,7 +143,8 @@ const EventTemplate = ({ hostID }) => {
                 <Field>
                     <Label>Description</Label>
                     <Control>
-                        <Textarea placeholder="Description" />
+                        <Textarea placeholder="Description" value={Description}
+        onChange={e => setDescription(e.target.value)}/>
                     </Control>
                 </Field>
                 <File >
