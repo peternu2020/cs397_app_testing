@@ -34,7 +34,10 @@ const App = () => {
   const [activeCost, setCost] = useState('All Costs');
   const [activeTime, setTime] = useState('All Times');
   const [userName, setUserName] = useState("");
-  
+
+  const datetonum = (date, time) => {
+    return Number(date[0])*10000 + Number(date[1])*100 + (Number(date[2])-2018)*1000000 + Number(time[0])*4 + Number(time[1])/10
+  }
 
   useEffect(() => {
     const ref = firebase.database().ref('/')
@@ -43,8 +46,30 @@ const App = () => {
     {
       if (snapshot.val()) {
         const data = snapshot.val()
-        setEvents(data);
-        setFilter(data);
+        const date = ""
+        const time = ""
+        const timesorter = []
+          for (i = 0; i < data.length; i += 1){
+            const date = data[i].date.split('/');
+            const time = data[i].time_start.split(':');
+            timesorter.push([data[i], datetonum(date, time)]);
+          }
+        timesorter.sort((a,b) => a[1] - b[1])
+        const currentDate = new Date();
+
+        const day = currentDate.getDate();
+        const month = currentDate.getMonth();
+        const year = currentDate.getFullYear();
+
+        const dateString = (month + 1) + "/" + day + "/" + year;
+        console.log(dateString)
+        const today = datetonum(dateString.split('/'),["0","0"])
+        const nopastevents = timesorter.filter(a => a[1] > today)
+        const sorteddata = nopastevents.map(event => event[0])
+        console.log(today)
+        console.log(sorteddata)
+        setEvents(sorteddata);
+        setFilter(sorteddata);
       }
       else
         console.log("no data.")
@@ -310,7 +335,7 @@ const App = () => {
         <TimeFilter />
         <h1>{userName ? "Logged in as " + userName : "Not logged in."}</h1>
       </Navbar>
-      
+
       <Modal active={cartActive}>
         <Modal.Background />
         <Modal.Content>
@@ -338,7 +363,7 @@ const App = () => {
           </Column>
         )}
       </Column.Group>
-  
+
     </Container>
   );
 };
