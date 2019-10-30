@@ -164,10 +164,9 @@ const EventTemplate = ({ hostID }) => {
                             </File.Icon>
                             <File.Label as="span">Choose a File</File.Label>
                         </File.CTA>
-                        <File.Name> placeholder </File.Name>
                     </File.Label>
                 </File>
-                <Field kind="group" align="left">
+                <Field kind="group" align="right">
                     <Control>
                         <Button color="primary">Confirm Event</Button>
                     </Control>

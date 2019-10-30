@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'rbx/index.css';
-import { Column, Container, Navbar, Button, Icon, Modal, Box, Dropdown } from 'rbx';
+import { Column, Container, Navbar, Button, Icon, Modal, Box, Dropdown, Tag } from 'rbx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils, faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
 import Product from './Components/Card';
@@ -329,11 +329,15 @@ const App = () => {
             </Button>
           </Navbar.Item>
         </Navbar.Brand>
-        <SignInPrompt userName={userName} onButtonClick={setUserName} />
         <DayFilter />
         <CostFilter />
         <TimeFilter />
-        <h1>{userName ? "Logged in as " + userName : "Not logged in."}</h1>
+        <Navbar.Item>
+        <SignInPrompt userName={userName} onButtonClick={setUserName} />
+        </Navbar.Item>
+        <Navbar.Item>
+        <Tag>{userName ? "Logged in as user:" + userName : "Guest User"}</Tag>
+        </Navbar.Item>
       </Navbar>
 
       <Modal active={cartActive}>
