@@ -20,7 +20,7 @@ var firebaseConfig = {
   appId: "1:684059161523:web:225ae9c7b51eaf653b51c6"
 };
 firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+
 
 const App = () => {
   const [data, setData] = useState({});
@@ -34,13 +34,13 @@ const App = () => {
   const [activeCost, setCost] = useState('All Costs');
   const [activeTime, setTime] = useState('All Times');
   const [userName, setUserName] = useState("");
-
+  const db = firebase.database();
   const datetonum = (date, time) => {
     return Number(date[0])*10000 + Number(date[1])*100 + (Number(date[2])-2018)*1000000 + Number(time[0])*4 + Number(time[1])/10
   }
 
   useEffect(() => {
-    const ref = firebase.database().ref('/')
+    const ref = db.ref('/')
     console.log(ref)
     ref.on('value', (snapshot) =>
     {

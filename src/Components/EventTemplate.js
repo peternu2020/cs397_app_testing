@@ -5,19 +5,24 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Card, Button, Content, Field, Label, Control, Input, Radio, Textarea, File, Select } from 'rbx';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
+import 'firebase/database';
 import {
   MuiPickersUtilsProvider,
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import db from '../App';
 
-export function DatePickers() {
+
+
+
+export function DatePickers({selectedDate, setSelectedDate}) {
   // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
 
   const handleDateChange = date => {
     setSelectedDate(date);
   };
+
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Grid container>
@@ -39,10 +44,8 @@ export function DatePickers() {
   );
 }
 
-export function TimePickers() {
+export function TimePickers({selectedTimeFrom,selectedTimeTo,setSelectedTimeFrom,setSelectedTimeTo}) {
   // The first commit of Material-UI
-  const [selectedTimeFrom, setSelectedTimeFrom] = React.useState(new Date());
-  const [selectedTimeTo, setSelectedTimeTo] = React.useState(new Date());
 
   const handleTimeChangeFrom = date => {
     setSelectedTimeFrom(date);
@@ -92,6 +95,39 @@ const EventTemplate = ({ hostID }) => {
   const [Description, setDescription] = React.useState('');
   
   const [FileUpload, setFileUpload] = React.useState('');
+
+  const [selectedTimeFrom, setSelectedTimeFrom] = React.useState(new Date());
+  const [selectedTimeTo, setSelectedTimeTo] = React.useState(new Date());
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  var d = new Date();
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  const submitEvent = () => {
+    const ref = db.ref('')
+    console.log("printed")
+    ref.push({
+      cost: 5,
+      date: selectedDate,
+      day_of_week: weekday[selectedDate.getDay()],
+      description: Description,
+      dietary_restrictions: DietaryRestrictions,
+      event_type: Event_Type,
+      food_type: FoodType,
+      location: Location,
+      membership: Member_Only,
+      name: EventName,
+      organization: Organization,
+      time_end: selectedTimeTo,
+      time_start: selectedTimeFrom
+    })
+  }
   
     return (
         <Card>
@@ -103,8 +139,8 @@ const EventTemplate = ({ hostID }) => {
         onChange={e => setEventName(e.target.value)} />
                     </Control>
                 </Field>
-                <DatePickers/>
-                <TimePickers/>
+                <DatePickers selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
+                <TimePickers selectedTimeFrom={selectedTimeFrom} selectedTimeTo={selectedTimeTo} setSelectedTimeFrom={setSelectedTimeFrom} setSelectedTimeTo={setSelectedTimeTo} />
                 <Field>
                     <Label>Food Type</Label>
                     <Control>
@@ -168,7 +204,7 @@ const EventTemplate = ({ hostID }) => {
                 </File>
                 <Field kind="group" align="right">
                     <Control>
-                        <Button color="primary">Confirm Event</Button>
+                        <Button onClick={submitEvent} color="primary">Confirm Event</Button>
                     </Control>
                 </Field>
             </Card.Content>
