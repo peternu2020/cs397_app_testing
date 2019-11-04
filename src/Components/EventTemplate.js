@@ -137,7 +137,7 @@ export const EventTemplate = ({ hostID }) => {
     console.log(id)
 
     ref.push({
-      "id": id,
+      "id": String(id),
       "cost": "Free",
       "date": date,
       "day_of_week": weekday[selectedDate.getDay()],
@@ -149,8 +149,8 @@ export const EventTemplate = ({ hostID }) => {
       "membership": Member_Only,
       "name": EventName,
       "organization": Organization,
-      "time_end": selectedTimeTo,
-      "time_start": selectedTimeFrom
+      "time_end": "13:00",//selectedTimeTo,
+      "time_start": "12:00"//selectedTimeFrom
     })
   }
     return (
@@ -200,11 +200,11 @@ export const EventTemplate = ({ hostID }) => {
                     <Control>
                         <Label>
                             <Radio name="exclusive" value = {Member_Only}
-                            onChange={e => setMemberOnly("Yes")} /> Yes
+                            onChange={e => setMemberOnly(1)} /> Yes
                         </Label>
                         <Label>
                             <Radio name="exclusive" value = {Member_Only}
-                            onChange={e => setMemberOnly("No")}  /> No
+                            onChange={e => setMemberOnly(0)}  /> No
                         </Label>
                     </Control>
                 </Field>

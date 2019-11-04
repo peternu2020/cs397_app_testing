@@ -47,15 +47,24 @@ const App = () => {
     {
       if (snapshot.val()) {
         const data = snapshot.val()
+        console.log('data')
+        console.log(data)
         const date = ""
         const time = ""
         const timesorter = []
-          for (i = 0; i < data.length; i += 1){
-            const date = data[i].date.split('/');
-            const time = data[i].time_start.split(':');
-            timesorter.push([data[i], datetonum(date, time)]);
-          }
+        const keys = Object.keys(data)
+        for (i in keys){
+          console.log(keys[i])
+          console.log(data[keys[i]])
+        }
+        for (i in keys){
+          const date = data[keys[i]].date.split('/');
+          const time = data[keys[i]].time_start.split(':');
+          timesorter.push([data[keys[i]], datetonum(date, time)]);
+        }
         timesorter.sort((a,b) => a[1] - b[1])
+        console.log('timesorter')
+        console.log(timesorter)
         const currentDate = new Date();
 
         const day = currentDate.getDate();
