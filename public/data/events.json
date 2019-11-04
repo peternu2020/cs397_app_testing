@@ -114,5 +114,54 @@
     "membership":0,
     "location":"Arts Circle",
     "description":"Food Truck festival for Homecoming week"
+  },
+  {
+    "id":"8",
+    "name":"APIDA Solidari-Tea",
+    "date":"11/05/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"17:30",
+    "time_end":"19:00",
+    "food_type":"tea, coffee & snacks",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
+    "organization":"Organization Multicultural Student Affairs",
+    "membership":0,
+    "location":"Deering Library, Deering 208, 1937 Sheridan Road, Evanston, IL 60208",
+    "description":"APIDA Solidari-Teas are a space for Asian Pacific Islander Desi American (APIDA) students to come together and build community through reflection, story-telling, and discussions about the APIDA identity and experience. No prior knowledge is required to participate. This is a co-constructed space for students to learn about, from, and with each other – with tea, coffee, and snacks."
+  },
+  {
+    "id":"9",
+    "name":"APIDA Solidari-Tea",
+    "date":"11/05/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"17:30",
+    "time_end":"19:00",
+    "food_type":"tea, coffee & snacks",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
+    "organization":"Organization Multicultural Student Affairs",
+    "membership":0,
+    "location":"Deering Library, Deering 208, 1937 Sheridan Road, Evanston, IL 60208",
+    "description":"Join us for a discussion about the Adversity and Resiliency for Chicago’s First: The State of Racial Justice for American Indian Chicagoans Report with contributors:\n- Jasmine Gurneau (Oneida/Menominee), Manager, Native American and Indigenous Initiatives, Northwestern University\n- Pamala Silas (Menominee and Oneida), Associate Director, Center for Native American and Indigenous Research at Northwestern University\n- Cynthia Soto (Sicangu Lakota/Puerto Rican), Director, Native American Support Program, University of Illinois at Chicago\n- Shelly Tucciarelli (Oneida), Executive Director, Visionary Ventures NFP Corp. Faith R. Kares (Associate Director, Institute for Research on Race and Public Policy) will faciliate the discussion.\nThis report was published June 2019 by a team from the Institute for Research on Race and Public Policy at the University of Illinois at Chicago."
+  },
+  {
+    "id":"10",
+    "name":"Lunch and Learn: IRRPP Report on Native American Chicagoans",
+    "date":"11/07/2019",
+    "day_of_week":"Thursday",
+    "time_start":"12:00",
+    "time_end":"13:30",
+    "food_type":"Not Avaliable",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
+    "organization":"Center for Native American and Indigenous Research (CNAIR)",
+    "membership":0,
+    "location":"Kresge Hall, Treinen Forum, 1515, 1880 Campus Drive, Evanston, IL 60208",
+    "description":"Join us for a discussion about the Adversity and Resiliency for Chicago’s First: The State of Racial Justice for American Indian Chicagoans Report with contributors:\n- Jasmine Gurneau (Oneida/Menominee), Manager, Native American and Indigenous Initiatives, Northwestern University\n- Pamala Silas (Menominee and Oneida), Associate Director, Center for Native American and Indigenous Research at Northwestern University\n- Cynthia Soto (Sicangu Lakota/Puerto Rican), Director, Native American Support Program, University of Illinois at Chicago\n- Shelly Tucciarelli (Oneida), Executive Director, Visionary Ventures NFP Corp. Faith R. Kares (Associate Director, Institute for Research on Race and Public Policy) will faciliate the discussion.\nThis report was published June 2019 by a team from the Institute for Research on Race and Public Policy at the University of Illinois at Chicago."
   }
+
 ]
