@@ -9,6 +9,7 @@ import firebase from 'firebase/app';
 import MyEvents from './Components/MyEvents';
 import SignInPrompt from './Components/SignInPrompt';
 import 'firebase/database';
+import {db} from './Components/EventTemplate';
 
 var firebaseConfig = {
   apiKey: "AIzaSyBWH38HPQ857TYu82B8wzufC8sK4yMOTco",
@@ -19,8 +20,8 @@ var firebaseConfig = {
   messagingSenderId: "684059161523",
   appId: "1:684059161523:web:225ae9c7b51eaf653b51c6"
 };
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+//firebase.initializeApp(firebaseConfig);
+
 
 const App = () => {
   const [data, setData] = useState({});
@@ -34,27 +35,36 @@ const App = () => {
   const [activeCost, setCost] = useState('All Costs');
   const [activeTime, setTime] = useState('All Times');
   const [userName, setUserName] = useState("");
-
+  const db = firebase.database();
   const datetonum = (date, time) => {
     return Number(date[0])*10000 + Number(date[1])*100 + (Number(date[2])-2018)*1000000 + Number(time[0])*4 + Number(time[1])/10
   }
 
   useEffect(() => {
-    const ref = firebase.database().ref('/')
+    const ref = db.ref('/')
     console.log(ref)
     ref.on('value', (snapshot) =>
     {
       if (snapshot.val()) {
         const data = snapshot.val()
+        console.log('data')
+        console.log(data)
         const date = ""
         const time = ""
         const timesorter = []
-          for (i = 0; i < data.length; i += 1){
-            const date = data[i].date.split('/');
-            const time = data[i].time_start.split(':');
-            timesorter.push([data[i], datetonum(date, time)]);
-          }
+        const keys = Object.keys(data)
+        for (i in keys){
+          console.log(keys[i])
+          console.log(data[keys[i]])
+        }
+        for (i in keys){
+          const date = data[keys[i]].date.split('/');
+          const time = data[keys[i]].time_start.split(':');
+          timesorter.push([data[keys[i]], datetonum(date, time)]);
+        }
         timesorter.sort((a,b) => a[1] - b[1])
+        console.log('timesorter')
+        console.log(timesorter)
         const currentDate = new Date();
 
         const day = currentDate.getDate();
@@ -367,7 +377,6 @@ const App = () => {
           </Column>
         )}
       </Column.Group>
-
     </Container>
   );
 };
