@@ -13,7 +13,7 @@ import {
 
 export function DatePickers() {
   // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
 
   const handleDateChange = date => {
     setSelectedDate(date);
@@ -41,8 +41,8 @@ export function DatePickers() {
 
 export function TimePickers() {
   // The first commit of Material-UI
-  const [selectedTimeFrom, setSelectedTimeFrom] = React.useState(new Date('2014-08-18T21:11:54'));
-  const [selectedTimeTo, setSelectedTimeTo] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [selectedTimeFrom, setSelectedTimeFrom] = React.useState(new Date());
+  const [selectedTimeTo, setSelectedTimeTo] = React.useState(new Date());
 
   const handleTimeChangeFrom = date => {
     setSelectedTimeFrom(date);
