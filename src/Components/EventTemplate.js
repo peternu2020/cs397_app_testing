@@ -11,10 +11,22 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-import db from '../App';
+import firebase from 'firebase/app';
+import 'firebase/database';
+//import db from '../App';
 
+var firebaseConfig = {
+  apiKey: "AIzaSyBWH38HPQ857TYu82B8wzufC8sK4yMOTco",
+  authDomain: "hungrycats-ad46c.firebaseapp.com",
+  databaseURL: "https://hungrycats-ad46c.firebaseio.com",
+  projectId: "hungrycats-ad46c",
+  storageBucket: "hungrycats-ad46c.appspot.com",
+  messagingSenderId: "684059161523",
+  appId: "1:684059161523:web:225ae9c7b51eaf653b51c6"
+};
+firebase.initializeApp(firebaseConfig);
 
-
+export const db = firebase.database();
 
 export function DatePickers({selectedDate, setSelectedDate}) {
   // The first commit of Material-UI
@@ -82,18 +94,18 @@ export function TimePickers({selectedTimeFrom,selectedTimeTo,setSelectedTimeFrom
 }
 
 
-const EventTemplate = ({ hostID }) => {
+export const EventTemplate = ({ hostID }) => {
   const [EventName, setEventName] = React.useState('');
   const [FoodType, setFoodType] = React.useState('');
   const [DietaryRestrictions, setDietaryRestrictions] = React.useState('');
   const [Organization, setOrganization] = React.useState('');
   const [Location, setLocation] = React.useState('');
-  
+
   const [Member_Only, setMemberOnly] = React.useState('');
   const [Event_Type, setEventType] = React.useState('');
-  
+
   const [Description, setDescription] = React.useState('');
-  
+
   const [FileUpload, setFileUpload] = React.useState('');
 
   const [selectedTimeFrom, setSelectedTimeFrom] = React.useState(new Date());
@@ -110,25 +122,37 @@ const EventTemplate = ({ hostID }) => {
   weekday[6] = "Saturday";
 
   const submitEvent = () => {
-    const ref = db.ref('')
+    const ref = db.ref('/')
     console.log("printed")
+    console.log(selectedDate)
+    console.log(Description)
+    console.log(Member_Only)
+
+    //parse selectedDate
+    const date = (selectedDate.getMonth()+1)+"/"+selectedDate.getDate()+"/"+(selectedDate.getYear()+1900)
+    ///
+
+    //get random id
+    const id = Math.floor(Math.random() * 100000)
+    console.log(id)
+
     ref.push({
-      cost: 5,
-      date: selectedDate,
-      day_of_week: weekday[selectedDate.getDay()],
-      description: Description,
-      dietary_restrictions: DietaryRestrictions,
-      event_type: Event_Type,
-      food_type: FoodType,
-      location: Location,
-      membership: Member_Only,
-      name: EventName,
-      organization: Organization,
-      time_end: selectedTimeTo,
-      time_start: selectedTimeFrom
+      "id": id,
+      "cost": "Free",
+      "date": date,
+      "day_of_week": weekday[selectedDate.getDay()],
+      "description": Description,
+      "dietary_restrictions": DietaryRestrictions,
+      "event_type": Event_Type,
+      "food_type": FoodType,
+      "location": Location,
+      "membership": Member_Only,
+      "name": EventName,
+      "organization": Organization,
+      "time_end": selectedTimeTo,
+      "time_start": selectedTimeFrom
     })
   }
-  
     return (
         <Card>
             <Card.Content>
@@ -175,11 +199,11 @@ const EventTemplate = ({ hostID }) => {
                     <Label>Member Only?</Label>
                     <Control>
                         <Label>
-                            <Radio name="exclusive" value = {Member_Only} 
+                            <Radio name="exclusive" value = {Member_Only}
                             onChange={e => setMemberOnly("Yes")} /> Yes
                         </Label>
                         <Label>
-                            <Radio name="exclusive" value = {Member_Only} 
+                            <Radio name="exclusive" value = {Member_Only}
                             onChange={e => setMemberOnly("No")}  /> No
                         </Label>
                     </Control>
@@ -211,5 +235,3 @@ const EventTemplate = ({ hostID }) => {
         </Card>
     )
 }
-
-export default EventTemplate;

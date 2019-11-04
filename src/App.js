@@ -9,6 +9,7 @@ import firebase from 'firebase/app';
 import MyEvents from './Components/MyEvents';
 import SignInPrompt from './Components/SignInPrompt';
 import 'firebase/database';
+import {db} from './Components/EventTemplate';
 
 var firebaseConfig = {
   apiKey: "AIzaSyBWH38HPQ857TYu82B8wzufC8sK4yMOTco",
@@ -19,7 +20,7 @@ var firebaseConfig = {
   messagingSenderId: "684059161523",
   appId: "1:684059161523:web:225ae9c7b51eaf653b51c6"
 };
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 
 
 const App = () => {
@@ -367,7 +368,6 @@ const App = () => {
           </Column>
         )}
       </Column.Group>
-
     </Container>
   );
 };
