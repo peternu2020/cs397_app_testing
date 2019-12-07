@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "node"
 before_install:
-  - cd yellow_react_project_testing
+  - cd hungry-cats
 after_success:
   - npm run build
   - npm install -g firebase-tools
