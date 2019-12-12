@@ -1,69 +1,65 @@
-{
-  "1": {
-    "id":"1",
+[
+  {
+    "id":"0",
     "name":"Cheap Lunch",
-    "date":"10-16-2019",
-    "day-of-week":"Wednesday",
-    "time-start":"12:00",
-    "time-end":"13:00",
-    "food-type":"BBQ",
-    "dietary-restrictions":"None",
-    "event-type":"Social",
+    "date":"10/16/2019",
+    "day_of_week":"Wednesday",
+    "time_start":"12:00",
+    "time_end":"13:00",
+    "food_type":"BBQ",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
     "cost":"Students $2 \nFaculty & Staff $4",
     "organization":"Sheil Catholic Center at Northwestern University",
     "membership":0,
     "location":"Sheil Catholic Center, 2110 Sheridan Road, Evanston, IL 60208",
-    "description":"Wednesdays @ noon
-                  Join us for hot off the grill - hamburgers - chicken burgers - veggie burgers - hot dogs - brats, garden salad - chips - soda - dessert!
-                  Meet new friends. All are welcome!!"
+    "description":"Wednesdays @ noon\nJoin us for hot off the grill _ hamburgers _ chicken burgers _ veggie burgers _ hot dogs _ brats, garden salad _ chips _ soda _ dessert!\nMeet new friends. All are welcome!!"
   },
 
-  "2": {
-    "id":"2",
+  {
+    "id":"1",
     "name":"Gender & Sexuality Studies Undergraduate Lunch",
-    "date":"10-16-2019",
-    "day-of-week":"Wednesday",
-    "time-start":"12:30",
-    "time-end":"14:00",
-    "food-type":"None",
-    "dietary-restrictions":"None",
-    "event-type":"Social",
-    "cost":"None",
+    "date":"10/16/2019",
+    "day_of_week":"Wednesday",
+    "time_start":"12:30",
+    "time_end":"14:00",
+    "food_type":"None",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
     "organization":"Gender & Sexuality Studies Program",
     "membership":0,
-    "location":"Kresge Hall, GSS Seminar Room (1-525), 1880 Campus Drive, Evanston, IL 60208",
+    "location":"Kresge Hall, GSS Seminar Room (1_525), 1880 Campus Drive, Evanston, IL 60208",
     "description":"Join us for our first installment of quarterly lunches for students. Meet current GSS students, staff, and faculty."
   },
 
-  "3": {
-    "id":"3",
+  {
+    "id":"2",
     "name":"WNUR BBQ",
-    "date":"10-14-2019",
-    "day-of-week":"Monday",
-    "time-start":"17:30",
-    "time-end":"20:00",
-    "food-type":"BBQ",
-    "dietary-restrictions":"None",
-    "event-type":"Social",
+    "date":"10/14/2019",
+    "day_of_week":"Monday",
+    "time_start":"17:30",
+    "time_end":"20:00",
+    "food_type":"BBQ",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
     "cost":"Free",
     "organization":"WNUR",
     "membership":0,
     "location":"Lakefill Fire Pit",
-    "description":"Come hang out, meet people on WNUR, and have some bbq!
-                  All are welcome (not just people involved with WNUR).
-                  Invite your friends! There will be music and lots of good company :)"
+    "description":"Come hang out, meet people on WNUR, and have some bbq!\nAll are welcome (not just people involved with WNUR).\nInvite your friends! There will be music and lots of good company :)"
   },
 
-  "4": {
-    "id":"4",
+  {
+    "id":"3",
     "name":"Krishna Lunch",
-    "date":"11-4-2019",
-    "day-of-week":"Monday",
-    "time-start":"10:50",
-    "time-end":"11:00",
-    "food-type":"Indian",
-    "dietary-restrictions":"Vegetarian",
-    "event-type":"Lunch",
+    "date":"11/4/2019",
+    "day_of_week":"Monday",
+    "time_start":"10:50",
+    "time_end":"11:00",
+    "food_type":"Indian",
+    "dietary_restrictions":"Vegetarian",
+    "event_type":"Lunch",
     "cost":"$6",
     "organization":"ISKON Chicago",
     "membership":0,
@@ -71,39 +67,101 @@
     "description":"Cheap vegetarian indian food every day of the week"
   },
 
-  "5": {
-    "id":"5",
+  {
+    "id":"4",
     "name":"DevSci Grad Student Welcome Back Event",
-    "date":"10-22-2019",
-    "day-of-week":"Tuesday",
-    "time-start":"15:00",
-    "time-end":"17:00",
-    "food-type":"Snacks",
-    "dietary-restrictions":"None",
-    "event-type":"Social",
-    "cost":"None",
+    "date":"10/22/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"15:00",
+    "time_end":"17:00",
+    "food_type":"Snacks",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
     "organization":"Institute for Innovations in Developmental Sciences (DevSci)",
     "membership":0,
     "location":"Norris University Center, Lake Room, 1999 Campus Drive, Evanston, IL 60208",
-    "description":"This welcome event is open to potential, new and returning cluster members. It’s a great way to meet the directors and learn more about cluster opportunities, including future events, poster sessions, seed funds, fellowship, and the new Transdisciplinary Developmental Sciences Certificate.
-                   Cluster students are encouraged to bring a friend to learn more about the Center for Trandisciplinary Training and DevSci Cluster.
-                   Snacks will be provided! "
+    "description":"This welcome event is open to potential, new and returning cluster members. It’s a great way to meet the directors and learn more about cluster opportunities, including future events, poster sessions, seed funds, fellowship, and the new Transdisciplinary Developmental Sciences Certificate.\nCluster students are encouraged to bring a friend to learn more about the Center for Trandisciplinary Training and DevSci Cluster.\nSnacks will be provided! "
   },
-
-  "6": {
-    "id":"6",
+  {
+    "id":"5",
     "name":"Homecoming Social",
-    "date":"10-22-2019",
-    "day-of-week":"Tuesday",
-    "time-start":"18:00",
-    "time-end":"20:00",
-    "food-type":"None",
-    "dietary-restrictions":"None",
-    "event-type":"Social",
-    "cost":"None",
+    "date":"10/22/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"18:00",
+    "time_end":"20:00",
+    "food_type":"None",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
     "organization":"Northwestern Homecoming",
     "membership":0,
     "location":"John Evans Center, 1800 Sheridan Road, Evanston, IL 60208",
     "description":"Celebrate student athletes and all things purple pride at this free event at the JEC! Food and free giveaways will be available. Sponsored by the Arch Society."
+  },
+  {
+    "id":"7",
+    "name":"Food Truck Festival",
+    "date":"10/22/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"10:30",
+    "time_end":"14:00",
+    "food_type":"None",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"see price listed",
+    "organization":"Northwestern Homecoming",
+    "membership":0,
+    "location":"Arts Circle",
+    "description":"Food Truck festival for Homecoming week"
+  },
+  {
+    "id":"8",
+    "name":"APIDA Solidari-Tea",
+    "date":"11/05/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"17:30",
+    "time_end":"19:00",
+    "food_type":"tea, coffee & snacks",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
+    "organization":"Organization Multicultural Student Affairs",
+    "membership":0,
+    "location":"Deering Library, Deering 208, 1937 Sheridan Road, Evanston, IL 60208",
+    "description":"APIDA Solidari-Teas are a space for Asian Pacific Islander Desi American (APIDA) students to come together and build community through reflection, story-telling, and discussions about the APIDA identity and experience. No prior knowledge is required to participate. This is a co-constructed space for students to learn about, from, and with each other – with tea, coffee, and snacks."
+  },
+  {
+    "id":"9",
+    "name":"APIDA Solidari-Tea",
+    "date":"11/05/2019",
+    "day_of_week":"Tuesday",
+    "time_start":"17:30",
+    "time_end":"19:00",
+    "food_type":"tea, coffee & snacks",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
+    "organization":"Organization Multicultural Student Affairs",
+    "membership":0,
+    "location":"Deering Library, Deering 208, 1937 Sheridan Road, Evanston, IL 60208",
+    "description":"Join us for a discussion about the Adversity and Resiliency for Chicago’s First: The State of Racial Justice for American Indian Chicagoans Report with contributors:\n- Jasmine Gurneau (Oneida/Menominee), Manager, Native American and Indigenous Initiatives, Northwestern University\n- Pamala Silas (Menominee and Oneida), Associate Director, Center for Native American and Indigenous Research at Northwestern University\n- Cynthia Soto (Sicangu Lakota/Puerto Rican), Director, Native American Support Program, University of Illinois at Chicago\n- Shelly Tucciarelli (Oneida), Executive Director, Visionary Ventures NFP Corp. Faith R. Kares (Associate Director, Institute for Research on Race and Public Policy) will faciliate the discussion.\nThis report was published June 2019 by a team from the Institute for Research on Race and Public Policy at the University of Illinois at Chicago."
+  },
+  {
+    "id":"10",
+    "name":"Lunch and Learn: IRRPP Report on Native American Chicagoans",
+    "date":"11/07/2019",
+    "day_of_week":"Thursday",
+    "time_start":"12:00",
+    "time_end":"13:30",
+    "food_type":"Not Avaliable",
+    "dietary_restrictions":"None",
+    "event_type":"Social",
+    "cost":"Free",
+    "organization":"Center for Native American and Indigenous Research (CNAIR)",
+    "membership":0,
+    "location":"Kresge Hall, Treinen Forum, 1515, 1880 Campus Drive, Evanston, IL 60208",
+    "description":"Join us for a discussion about the Adversity and Resiliency for Chicago’s First: The State of Racial Justice for American Indian Chicagoans Report with contributors:\n- Jasmine Gurneau (Oneida/Menominee), Manager, Native American and Indigenous Initiatives, Northwestern University\n- Pamala Silas (Menominee and Oneida), Associate Director, Center for Native American and Indigenous Research at Northwestern University\n- Cynthia Soto (Sicangu Lakota/Puerto Rican), Director, Native American Support Program, University of Illinois at Chicago\n- Shelly Tucciarelli (Oneida), Executive Director, Visionary Ventures NFP Corp. Faith R. Kares (Associate Director, Institute for Research on Race and Public Policy) will faciliate the discussion.\nThis report was published June 2019 by a team from the Institute for Research on Race and Public Policy at the University of Illinois at Chicago."
   }
-}
+
+]
