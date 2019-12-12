@@ -1,7 +1,16 @@
 language: node_js
 node_js:
-  - "node"
-after_success:
+  - "stable"
+addons:
+  apt:
+    packages:
+      # needed by Cypress, not in Ubuntu 16+ by default
+      - libgconf-2-4
+cache:
+  directories:
+  - node_modules
+  # folder with Cypress binary
+  - ~/.cache
+script:
+  - npm run test:ci
   - npm run build
-  - npm install -g firebase-tools
-  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
