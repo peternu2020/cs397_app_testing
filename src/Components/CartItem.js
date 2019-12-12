@@ -32,7 +32,15 @@ const CartItem = ({ product, going, amount, removeFromCart }) => {
         <Content>
           {product.location}
         </Content>
-        <Button onClick={() => { removeFromCart(product.sku, going); }
+        <Button onClick={() => { 
+                  <tr data-testid={`{product.sku}`}>
+                      <td className=`removeEvent`>
+                                <span data-testid="markAsCompleted" className="glyphicon glyphicon-ok icon" aria-hidden="true" />
+                                  {product.sku}
+                                <span data-testid="markAsDeleted"className="glyphicon glyphicon-remove-sign close" aria-hidden="true" onClick={ removeFromCart(product.sku, going)}/>
+                              </td>
+                            </tr>
+            }
         } rounded>
           Remove
           </Button>
