@@ -249,6 +249,7 @@ const App = () => {
           <Dropdown.Content>
             {days.map(day =>
               <Dropdown.Item
+              data-cy={day}
                 onClick={() => {
                   setDay(day)
                   filterItems(day, activeCost, activeTime)
