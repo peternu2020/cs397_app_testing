@@ -241,7 +241,7 @@ const App = () => {
     return (
       <Dropdown>
         <Dropdown.Trigger>
-          <Button>
+          <Button data-cy="day_filter">
             <span>{activeDay}</span>
           </Button>
         </Dropdown.Trigger>
