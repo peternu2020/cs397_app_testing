@@ -10,4 +10,10 @@ describe ('Test App', () => {
     cy.visit ('/');
     cy.get('[data-cy=day_filter]').should('contain', 'All Days');
   });
+
+  it('shows dropdown to filter by day when event filter button is clicked', () => {
+    cy.visit ('/');
+    cy.get('[data-cy=Monday]').click();
+    cy.get('[data-cy=day_filter]').should('contain' ,'Monday');
+  });
 });
