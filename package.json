@@ -15,7 +15,7 @@
     "rbx": "^2.2.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "react-scripts": "3.1.2"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
   "cypress:ci": "cypress run --config video=false",
